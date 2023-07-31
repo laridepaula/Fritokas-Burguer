@@ -1,0 +1,33 @@
+main {
+    background: var(--color-red);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    gap:30px
+}
+
+#email-input,
+#password-input,
+.acessar-button {
+    width: 250px;
+    height: 50px;
+    border-radius: 50px;
+    background: var(--color-background-beige);
+    text-align: center;
+    font-family: "Bello";
+    font-size: 32px;
+    margin-top: 15px;
+    border: none;
+}
+
+.acessar-button {
+    background: var(--color-orange);
+    color:#ffff;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
