@@ -1,0 +1,51 @@
+.circle {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: var(--color-background-beige);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bread-top {
+    width: 250px;
+    height: 75px;
+    border-radius: 100px 100px 5px 5px;
+    background: var(--color-orange);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset, 2px 4px 10px 2px rgba(0, 0, 0, 0.25);
+}
+
+.fritokas {
+    width: 250px;
+    height: 86px;
+    color: var(--color-red);
+    font-size: 82px;
+    letter-spacing: -3px;
+    margin-top: -35px;
+}
+
+.burguer {
+    width: 250px;
+    height: 60px;
+    color: #000;
+    font-size: 56px;
+    letter-spacing: 11.6px;
+    margin-top: -20px;
+    margin-bottom: 5px;
+}
+
+.bread-bottom {
+    width: 250px;
+    height: 60px;
+    border-radius: 5px 5px 100px 100px;
+    background: var(--color-orange);
+    box-shadow: 5px 1px 10px 2px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.bread-top,
+.fritokas,
+.burguer,
+.bread-bottom {
+    flex-shrink: 1;
+}

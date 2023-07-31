@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-yellow: #FFA620;
+  --color-red: #711400;
+  --color-orange: #C9772C;
+  --color-background-beige: #FFF1E3;
+}
+
+@font-face {
+  font-family: 'Bello';
+  src: url('./assets/Bello-SmCp.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Bello';
+}
