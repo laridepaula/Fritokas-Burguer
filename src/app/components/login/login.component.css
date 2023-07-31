@@ -21,6 +21,7 @@ main {
     font-size: 32px;
     margin-top: 15px;
     border: none;
+    cursor: pointer;
 }
 
 .acessar-button {
@@ -30,4 +31,5 @@ main {
     text-decoration: none;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
