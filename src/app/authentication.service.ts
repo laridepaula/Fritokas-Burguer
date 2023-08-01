@@ -1,12 +1,26 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService {
-  login(email: string, password: string) {
-    const isValidUser = email === 'garconete@fritokas.com' && password === '123456';
-    return of({ success: isValidUser });
+export class AuthService {
+  private isAuthenticated: boolean = false;
+
+  constructor() { }
+
+  login(email: string, password: string): boolean {
+    if (email === 'garconete@fritokas.com' && password === '123456') {
+      this.isAuthenticated = true;
+      return true;
+    }
+    return false;
+  }
+
+  isLoggedIn(): boolean {
+    return this.isAuthenticated;
+  }
+
+  logout(): void {
+    this.isAuthenticated = false;
   }
 }

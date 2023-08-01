@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { ClienttableComponent } from './components/clienttable/clienttable.component';
-import { AuthenticationService } from './authentication.service';
+import { AuthService} from './authentication.service';
 import { __importDefault } from 'tslib';
 import { MenucardComponent } from './components/menucard/menucard.component';
 
@@ -22,10 +23,11 @@ import { MenucardComponent } from './components/menucard/menucard.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
-    AuthenticationService,
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })
