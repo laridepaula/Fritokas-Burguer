@@ -1,14 +1,15 @@
 <main>
     <app-logo></app-logo>
-    <form class="form-login">
+    <form class="form-login" (ngSubmit)="onLogin(emailInput.value, passwordInput.value)">
         <div>
-            <input type="email" name="email-input" id="email-input" placeholder="E-MAIL">
+            <input type="email" id="email-input" #emailInput placeholder="E-MAIL">
         </div>
         <div>
-            <input type="password" name="password-input" id="password-input" placeholder="SENHA">
+            <input type="password" id="password-input" #passwordInput placeholder="SENHA">
         </div>
         <div>
-            <a class="acessar-button" routerLink="/clienttable">ACESSAR</a>
+            <a *ngIf="onLogin" class="acessar-button" routerLink="/clienttable">ACESSAR</a>
+            <!--<button type="submit" class="acessar-button">ACESSAR</button>-->
         </div>
     </form>
 </main>

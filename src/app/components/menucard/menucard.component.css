@@ -1,0 +1,43 @@
+.cardapio-select {
+    width: 350px;
+    height: 60px;
+    border-radius: 50px;
+    background: #FFF;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.acessar-cafe {
+    width: 165px;
+    height: 50px;
+    border-radius: 50px 5px 5px 50px;
+    background: #FFA620;
+    color: #FFF;
+    font-family: Bello;
+    font-size: 26px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.acessar-almoco {
+    width: 165px;
+    height: 50px;
+    border-radius: 5px 50px 50px 5px;
+    background: #8D1900;
+    color: #FFF;
+    font-family: Bello;
+    font-size: 26px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.acessar-cafe:hover,
+.acessar-almoco:hover {
+    border: 2px solid #000;
+}
