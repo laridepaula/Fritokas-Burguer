@@ -1,4 +1,4 @@
 <div class="cardapio-select">
-    <a class="acessar-cafe" href="/cafedamanha">CAFÉ DA MANHÃ</a>
-    <a class="acessar-almoco" href="/almoco">ALMOÇO</a>
+    <a class="acessar-cafe"  [ngClass]="{'selected': isCafeSelected, 'opaco': isAlmocoSelected}" (click)="selectCafe()" href="/cafedamanha">CAFÉ DA MANHÃ</a>
+    <a class="acessar-almoco"  [ngClass]="{'selected': isAlmocoSelected, 'opaco': isCafeSelected}" (click)="selectAlmoco()" href="/almoco">ALMOÇO</a>
 </div>

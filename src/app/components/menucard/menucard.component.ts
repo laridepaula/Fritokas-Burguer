@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./menucard.component.css']
 })
 export class MenucardComponent {
+  isCafeSelected: boolean = false;
+  isAlmocoSelected: boolean = false;
 
+  selectCafe() {
+    this.isCafeSelected = true;
+    this.isAlmocoSelected = false;
+  }
+
+  selectAlmoco() {
+    this.isCafeSelected = false;
+    this.isAlmocoSelected = true;
+  }
 }

@@ -47,5 +47,5 @@
 .fritokas,
 .burguer,
 .bread-bottom {
-    flex-shrink: 1;
+    flex-shrink: 3;
 }
