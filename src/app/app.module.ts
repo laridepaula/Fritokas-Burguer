@@ -11,6 +11,7 @@ import { ClienttableComponent } from './components/clienttable/clienttable.compo
 import { AuthService} from './authentication.service';
 import { __importDefault } from 'tslib';
 import { MenucardComponent } from './components/menucard/menucard.component';
+import { CafedamanhaComponent } from './components/cafedamanha/cafedamanha.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MenucardComponent } from './components/menucard/menucard.component';
     LogoComponent,
     ClienttableComponent,
     MenucardComponent,
+    CafedamanhaComponent,
   ],
   imports: [
     BrowserModule,

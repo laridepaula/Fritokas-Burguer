@@ -1,0 +1,9 @@
+<main>
+    <app-menucard></app-menucard>
+    <div *ngFor="let product of products">
+      <img [src]="product.image" [alt]="product.name" />
+      <h3>{{ product.name }}</h3>
+      <p>Preço: {{ product.price }}</p>
+    </div>
+  </main>
+  
