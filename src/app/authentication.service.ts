@@ -17,6 +17,7 @@ export class AuthService {
       const response = await firstValueFrom(this.http.post<any>(this.apiUrl, userLogin));
       console.log(response)
       if (response.accessToken) {
+        localStorage.setItem('token', response.accessToken);
         this.isAuthenticated = true;
         return true;
       } else {
@@ -29,7 +30,7 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return this.isAuthenticated;
+    return this.isAuthenticated || localStorage.getItem('token') !== null;
   }
 
 }
