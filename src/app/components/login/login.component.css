@@ -38,3 +38,15 @@ main {
     font-size: 12px;
     margin: 40px;
   }
+  @media screen and (min-width: 970px) {
+    main {
+      flex-direction: row;
+    }
+  
+    #email-input,
+    #password-input,
+    .acessar-button {
+      margin-top: 30px;
+      margin-left: 30px;
+    }
+  }

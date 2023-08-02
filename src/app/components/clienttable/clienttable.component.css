@@ -33,8 +33,8 @@ main {
 .selecionar-cardapio {
     background: var(--color-red);
     height: 100vh;
-    width: 400px;
-    border-radius: 160px 160px 0 0;
+    width: 100%;
+    border-radius: 30% 30% 0 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -50,6 +50,14 @@ main {
     font-weight: 100;
     margin-top: 15px;
 }
+@media screen and (min-width: 800px) {
+.selecionar-cardapio {
+    border-radius: 0;
+}
+
+
+}
+
 
 /* Logo com dimensões reduzidas em 50% */
 .circle {
