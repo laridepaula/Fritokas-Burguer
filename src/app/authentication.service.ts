@@ -1,26 +1,35 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private isAuthenticated: boolean = false;
+  private apiUrl = 'http://localhost:8080/login';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  login(email: string, password: string): boolean {
-    if (email === 'garconete@fritokas.com' && password === '123456') {
-      this.isAuthenticated = true;
-      return true;
+  async login(email: string, password: string): Promise<boolean> {
+    try {
+      const userLogin = { email, password };
+      const response = await firstValueFrom(this.http.post<any>(this.apiUrl, userLogin));
+      console.log(response)
+      if (response.accessToken) {
+        this.isAuthenticated = true;
+        return true;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      console.error('Erro ao fazer login:', error);
+      return false;
     }
-    return false;
   }
 
   isLoggedIn(): boolean {
     return this.isAuthenticated;
   }
 
-  logout(): void {
-    this.isAuthenticated = false;
-  }
 }

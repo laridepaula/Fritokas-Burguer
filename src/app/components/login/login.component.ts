@@ -14,13 +14,19 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  onSubmit(): void {
-    const isLoggedIn = this.authService.login(this.email, this.password);
-    if (isLoggedIn) {
-      console.log("login valido")
-      this.router.navigate(['/clienttable']);
-    } else {
-      console.log("login invalido")
+  async onSubmit(): Promise<void> {
+    try {
+      this.loginError = false;
+      const isLoggedIn = await this.authService.login(this.email, this.password);
+      if (isLoggedIn) {
+        console.log("login válido");
+        this.router.navigate(['/clienttable']);
+      } else {
+        console.log("login inválido");
+        this.loginError = true;
+      }
+    } catch (error) {
+      console.error('Erro ao fazer login:', error);
       this.loginError = true;
     }
   }

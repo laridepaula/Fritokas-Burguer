@@ -11,5 +11,6 @@
             <!--<a *ngIf="onLogin" class="acessar-button" routerLink="/clienttable">ACESSAR</a>-->
             <button type="submit" class="acessar-button">ACESSAR</button>
         </div>
+        <span *ngIf="loginError" class="error-message">Email ou senha está incorreto</span>
     </form>
 </main>
