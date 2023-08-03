@@ -1,9 +1,17 @@
 <main>
     <app-menucard></app-menucard>
-    <div *ngFor="let product of products">
-      <img [src]="product.image" [alt]="product.name" />
-      <h3>{{ product.name }}</h3>
-      <p>Preço: {{ product.price }}</p>
+    <div class="box-menu" *ngFor="let product of products">
+        <div class="container-data">
+            <div class="container-text">
+                <p class="name-product">{{ product.name }}</p>
+                <p class="details-product">{{product.details}}</p>
+                <div class="product">
+                    <p class="price-product">Preço: {{ product.price }}</p>
+                    <input type="number" class="count-product" min="1" value="0">
+                </div>
+
+            </div>
+            <img class="img-product" [src]="product.image" [alt]="product.name" />
+        </div>
     </div>
-  </main>
-  
+</main>
