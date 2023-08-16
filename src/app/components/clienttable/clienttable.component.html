@@ -1,20 +1,22 @@
 <main>
-    <div class="circle">
+    <div class="circle" [@fadeOut]="menuVisible ? 'hidden' : 'visible'">
         <div class="bread-top"></div>
         <h1 class="fritokas">FRITOKAS</h1>
         <h2 class="burguer">burguer</h2>
         <div class="bread-bottom"></div>
     </div>
-    <form class="form-client">
+    <form class="form-client" [@fadeOut]="menuVisible ? 'hidden' : 'visible'">
         <div>
-            <input type="text" name="name-input" id="name-input" placeholder="NOME DO CLIENTE">
+            <input type="text" name="name-input" id="name-input" placeholder="NOME DO CLIENTE" [(ngModel)]="clientName">
         </div>
         <div>
-            <input type="text" name="table-input" id="table-input" placeholder="NÚMERO DA MESA">
+            <input type="text" name="table-input" id="table-input" placeholder="NÚMERO DA MESA"
+                [(ngModel)]="tableNumber">
         </div>
+        <button class="btn-order" (click)="startOrder()" [disabled]="orderStarted">Iniciar Pedido</button>
     </form>
-    <section class="selecionar-cardapio">
+    <section class="selecionar-cardapio" [@fadeOut]="menuVisible ? 'visible' : 'hidden'">
         <h3 class="text-select">SELECIONE O CARDÁPIO</h3>
-       <app-menucard></app-menucard>
+        <app-menucard (menuSelected)="onMenuSelected($event)" *ngIf="menuVisible"></app-menucard>
     </section>
 </main>
