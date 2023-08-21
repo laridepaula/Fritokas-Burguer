@@ -1,0 +1,17 @@
+<div class="box-menu" *ngFor="let product of products">
+    <div class="container-data">
+        <div class="container-text">
+            <p class="name-product">{{ product.name }}</p>
+            <p class="details-product">{{product.details}}</p>
+            <div class="product">
+                <p class="price-product">Preço: {{ product.price }}</p>
+                <div class="input-group">
+                    <button class="decrement-button" (click)="decrement(product)">-</button>
+                    <input type="number" class="count-product" min="1" [value]="productCounts[product.id] || 0" readonly>
+                    <button class="increment-button" (click)="increment(product)">+</button>
+                </div>
+            </div>
+        </div>
+        <img class="img-product" [src]="product.image" [alt]="product.name" />
+    </div>
+</div>
