@@ -7,7 +7,7 @@
     </div>
     <form class="form-client" [@fadeOut]="menuVisible ? 'hidden' : 'visible'">
         <div>
-            <input type="text" name="name-input" id="name-input" placeholder="NOME DO CLIENTE" [(ngModel)]="clientName">
+            <input type="text" name="name-input" id="name-input" placeholder="NOME DO CLIENTE" [(ngModel)]="client">
         </div>
         <div>
             <input type="text" name="table-input" id="table-input" placeholder="NÚMERO DA MESA"
@@ -17,6 +17,8 @@
     </form>
     <section class="selecionar-cardapio" [@fadeOut]="menuVisible ? 'visible' : 'hidden'">
         <h3 class="text-select">SELECIONE O CARDÁPIO</h3>
-        <app-menucard (menuSelected)="onMenuSelected($event)" *ngIf="menuVisible"></app-menucard>
+        <app-menucard (menuSelected)="onMenuSelected($event)" (productSelected)="onMenuProductSelected($event)" *ngIf="menuVisible"></app-menucard>
+        
     </section>
+    <app-order [selectedProducts]="selectedProducts"></app-order>
 </main>

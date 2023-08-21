@@ -1,0 +1,39 @@
+.order-summary {
+    background: var(--color-blue); /* Define a cor de fundo desejada */
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .order-products {
+    margin-top: 15px;
+  }
+  
+  .order-product {
+    border-bottom: 1px solid white;
+    padding: 10px 0;
+  }
+  
+  .product-name,
+  .product-quantity {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .btn-confirm-order {
+    background: var(--color-orange); /* Define a cor do botão */
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-confirm-order:hover {
+    background: var(--color-red); /* Define a cor do botão quando hover */
+  }
+  

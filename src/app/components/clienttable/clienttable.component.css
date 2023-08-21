@@ -40,8 +40,7 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 30px;
-    margin-top: 30px;
+    margin-top: 0;
     transition: all 0.9s ease-in-out;
   }
   

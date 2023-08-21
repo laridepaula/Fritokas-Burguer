@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, Output, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
@@ -8,6 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class MenuComponent implements OnChanges {
   @Input() selectedType: string = ''; 
+  @Output() productSelected = new EventEmitter<any>();
   products: any[] = [];
 
   constructor(private http: HttpClient) { }
@@ -36,6 +37,7 @@ export class MenuComponent implements OnChanges {
     } else {
       this.productCounts[product.id]++;
     }
+    console.log(product);
   }
 
   decrement(product: any) {
@@ -43,4 +45,10 @@ export class MenuComponent implements OnChanges {
       this.productCounts[product.id]--;
     }
   }
+
+  selectProduct(product: any) {
+    console.log (this.productSelected)
+    this.productSelected.emit(product.id);
+  }
+  
 }

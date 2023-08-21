@@ -2,4 +2,5 @@
     <a class="acessar-cafe" [ngClass]="{'selected': isCafeSelected, 'opaco': isAlmocoSelected}" (click)="selectCafe()">CAFÉ DA MANHÃ</a>
     <a class="acessar-almoco" [ngClass]="{'selected': isAlmocoSelected, 'opaco': isCafeSelected}" (click)="selectAlmoco()">ALMOÇO</a>
 </div>
-<app-menu [selectedType]="isCafeSelected ? 'cafedamanha' : (isAlmocoSelected ? 'almoco' : '')"></app-menu>
+<app-menu [selectedType]="isCafeSelected ? 'cafedamanha' : (isAlmocoSelected ? 'almoco' : '')" (productSelected)="productSelected.emit($event)"></app-menu>
+

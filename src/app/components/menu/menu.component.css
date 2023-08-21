@@ -90,3 +90,13 @@ main {
   .increment-button:hover, .decrement-button:hover {
     background-color: #ffffff;
   }
+
+
+  @media (min-width: 700px) {
+    .container-data {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  
+  }

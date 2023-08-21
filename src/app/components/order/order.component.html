@@ -1,0 +1,11 @@
+<section class="order-summary" *ngIf="selectedProducts.length > 0">
+    <h3 class="text-select">RESUMO DO PEDIDO</h3>
+    <div class="order-products">
+      <div class="order-product" *ngFor="let product of selectedProducts">
+        <p class="product-name">{{ product.product.name }}</p>
+        <p class="product-quantity">Quantidade: {{ product.qty }}</p>
+      </div>
+    </div>
+    <p class="total">Total: R$ {{ calculateTotal() }}</p>
+    <button class="btn-confirm-order" (click)="confirmOrder()">Confirmar Pedido</button>
+  </section>
