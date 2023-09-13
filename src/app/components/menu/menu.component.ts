@@ -1,3 +1,4 @@
+import { OrderService } from 'src/app/order.service';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -9,8 +10,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class MenuComponent implements OnChanges {
   @Input() selectedType: string = ''; 
   products: any[] = [];
+  selectedProducts: any[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private OrderService: OrderService,
+  ) { }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['selectedType']) {
@@ -27,20 +32,32 @@ export class MenuComponent implements OnChanges {
       });
     }
   }
-
   productCounts: { [productId: string]: number } = {};
 
   increment(product: any) {
     if (!this.productCounts[product.id]) {
       this.productCounts[product.id] = 1;
+      this.selectedProducts.push({ id: product.id, name: product.name, count: 1 });
     } else {
       this.productCounts[product.id]++;
+      const selectedProduct = this.selectedProducts.find(p => p.id === product.id);
+      if (selectedProduct) {
+        selectedProduct.count++;
+      }
     }
+    this.OrderService.addProduct(product);
+    console.log(product)
   }
 
   decrement(product: any) {
     if (this.productCounts[product.id] && this.productCounts[product.id] > 0) {
       this.productCounts[product.id]--;
+      const selectedProduct = this.selectedProducts.find(p => p.id === product.id);
+      if (selectedProduct) {
+        selectedProduct.count--;
+      }
     }
+    this.OrderService.removeProduct(product);
   }
+ 
 }

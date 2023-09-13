@@ -13,6 +13,8 @@ import { AuthService} from './authentication.service';
 import { __importDefault } from 'tslib';
 import { MenucardComponent } from './components/menucard/menucard.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { OrderComponent } from './components/order/order.component';
+import { OrderService } from './order.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { MenuComponent } from './components/menu/menu.component';
     ClienttableComponent,
     MenucardComponent,
     MenuComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { MenuComponent } from './components/menu/menu.component';
   ],
   providers: [
     AuthService,
+    OrderService
   ],
   bootstrap: [AppComponent]
 })
