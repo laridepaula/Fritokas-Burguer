@@ -1,0 +1,20 @@
+<div *ngIf="selectedProducts.length > 0" class="selected-products">
+  <h4>Resumo do pedido:</h4>
+  <p>Cliente: {{ clientName }}</p>
+  <p>Mesa: {{ tableNumber }}</p>
+  <ul class="product-list">
+    <li *ngFor="let product of selectedProducts" class="product-item">
+      <div class="product-info">
+        <span class="product-name">{{ product.name }}</span>
+        <span class="product-price">x {{ product.price | currency:'BRL' }}</span>
+      </div>
+      <div class="product-buttons">
+        <button class="round-button" (click)="decrementProduct(product)">-</button>
+        <span>{{ product.count }}</span>
+        <button class="round-button" (click)="incrementProduct(product)">+</button>
+      </div>
+    </li>
+  </ul>
+  <p class="total">Total: {{ calculateTotal() | currency:'BRL' }}</p>
+  <button class="submit-button" (click)="createOrder()">Enviar Pedido</button>
+</div>
