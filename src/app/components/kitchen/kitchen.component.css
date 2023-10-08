@@ -1,0 +1,73 @@
+.order-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .order {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .order:hover {
+    transform: scale(1.05);
+  }
+  
+  .order-header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .order-products ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .order-products li {
+    margin-bottom: 5px;
+  }
+  
+  .order-status {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .pending {
+    color: #ffcc00;
+  }
+  
+  .in-progress {
+    color: #0099cc;
+  }
+  
+  .completed {
+    color: #33cc33;
+  }
+  
+  button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #ff9900;
+  }
+  
+  .order-container::after {
+    content: '';
+    grid-column: 1 / -1;
+    height: 20px;
+  }
+  

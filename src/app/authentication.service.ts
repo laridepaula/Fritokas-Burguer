@@ -7,6 +7,7 @@ import { firstValueFrom } from 'rxjs';
 })
 export class AuthService {
   private isAuthenticated: boolean = false;
+  private userRole: string = 'guest';
   private apiUrl = 'http://localhost:8080/login';
 
   constructor(private http: HttpClient) { }
@@ -15,9 +16,12 @@ export class AuthService {
     try {
       const userLogin = { email, password };
       const response = await firstValueFrom(this.http.post<any>(this.apiUrl, userLogin));
-      console.log(response)
-      if (response.accessToken) {
-        localStorage.setItem('token', response.accessToken);
+      console.log(response);
+
+      if (response.accessToken && response.user && response.user.role) {
+        // O servidor forneceu um accessToken e um user com um papel (role)
+        this.userRole = response.user.role;
+        localStorage.setItem('token', response.accessToken); // Você pode armazenar o token se desejar
         this.isAuthenticated = true;
         return true;
       } else {
@@ -30,7 +34,10 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return this.isAuthenticated || localStorage.getItem('token') !== null;
+    return this.isAuthenticated;
   }
 
+  getUserRole(): string {
+    return this.userRole;
+  }
 }
